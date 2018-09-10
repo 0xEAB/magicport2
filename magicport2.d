@@ -110,12 +110,12 @@ void main(string[] args)
     auto longmap = buildLongMap(superast);
 
     bool failed;
-    try { mkdir(destdir); } catch {}
+    try { mkdir(destdir); } catch (Throwable) {}
     foreach(m; mapping)
     {
         auto dir = buildPath(destdir, m.p);
         if (m.p.length)
-            try { mkdir(dir); } catch {}
+            try { mkdir(dir); } catch (Throwable) {}
 
         auto fn = buildPath(dir, m.m).setExtension(".d");
         auto f = File(fn, "wb");

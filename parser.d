@@ -113,7 +113,7 @@ Module parse(Token[] tokens, string fn)
         default:
             decls ~= parseDecl();
             break;
-        };
+        }
         assert(lastt.text.ptr != t.text.ptr);
     }
     fail();

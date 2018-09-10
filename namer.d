@@ -12,7 +12,7 @@ class Namer : Visitor
     {
     }
 
-    alias super.visit visit;
+    alias visit = typeof(super).visit;
 
     override void visit(FuncDeclaration ast)
     {
@@ -71,7 +71,7 @@ class Namer : Visitor
 
 class LongNamer : Namer
 {
-    alias super.visit visit;
+    alias visit = typeof(super).visit;
 
     override void visit(FuncDeclaration ast)
     {
